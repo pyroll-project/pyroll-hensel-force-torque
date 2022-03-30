@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pyroll-hensel-force"
+version = "0.1.0"
+description = "PyRoll plugin providing roll force and roll torque empirical approach by A. Hensel."
+authors = [
+]
+license = ""
+
+[tool.poetry.dependencies]
+python = ">= 3.9, <3.11"
+pyroll = "^0.5.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.0"
+pyroll = { path = "pyroll-core", develop = true }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
