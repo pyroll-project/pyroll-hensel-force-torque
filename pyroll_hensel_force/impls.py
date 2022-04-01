@@ -4,7 +4,7 @@ from pyroll import RollPass
 
 @RollPass.hookimpl
 def cross_section_ratio(roll_pass: RollPass):
-    mean_cross_section = (roll_pass.in_profile.cross_section + 2 * roll_pass.out_profile.cross_section) / 3
+    mean_cross_section = (roll_pass.in_profile.cross_section.area + 2 * roll_pass.out_profile.cross_section.area) / 3
     return roll_pass.contact_area / mean_cross_section
 
 
