@@ -2,7 +2,7 @@ from pyroll import RollPass
 
 
 @RollPass.hookspec
-def cross_section_ratio(roll_pass):
+def roll_gap_ratio(roll_pass):
     """Calculate cross section ratio used in Hensel-Poluchin master curves."""
 
 
@@ -17,5 +17,5 @@ def deformation_resistance(roll_pass):
 
 
 @RollPass.hookspec
-def lever_coefficient(roll_pass):
+def lever_arm_coefficient(roll_pass):
     """Calculate lever coefficient according to Hensel-Poluchin master curve."""
