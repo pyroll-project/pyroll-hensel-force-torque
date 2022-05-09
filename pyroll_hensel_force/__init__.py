@@ -1,6 +1,6 @@
 from pyroll import RollPass
-from pyroll.ui.exporter import Exporter
-from pyroll.ui.report import Report
+from pyroll import Exporter
+from pyroll import Reporter
 
 from . import specs
 from . import impls
@@ -10,7 +10,7 @@ RollPass.plugin_manager.register(impls)
 
 from . import report
 
-Report.plugin_manager.register(report)
+Reporter.plugin_manager.register(report)
 
 from . import export
 

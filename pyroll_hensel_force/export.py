@@ -1,10 +1,10 @@
 from pyroll import RollPass
 from pyroll.ui.exporter import Exporter
-from pyroll.utils import applies_to_unit_types
+from pyroll import for_units
 
 
 @Exporter.hookimpl
-@applies_to_unit_types(RollPass)
+@for_units(RollPass)
 def columns(unit: RollPass):
     return dict(
         roll_gap_ratio=f"{unit.roll_gap_ratio:.2f}",

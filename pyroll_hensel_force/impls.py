@@ -5,7 +5,7 @@ from pyroll import RollPass
 @RollPass.hookimpl
 def roll_gap_ratio(roll_pass: RollPass):
     mean_cross_section = (roll_pass.in_profile.cross_section.area + 2 * roll_pass.out_profile.cross_section.area) / 3
-    return roll_pass.contact_area / mean_cross_section
+    return roll_pass.roll.contact_area / mean_cross_section
 
 
 @RollPass.hookimpl
@@ -32,9 +32,9 @@ def lever_arm_coefficient(roll_pass: RollPass):
 
 @RollPass.hookimpl
 def roll_force(roll_pass: RollPass):
-    return roll_pass.deformation_resistance * roll_pass.contact_area
+    return roll_pass.deformation_resistance * roll_pass.roll.contact_area
 
 
-@RollPass.hookimpl
-def roll_torque(roll_pass: RollPass):
-    return roll_pass.roll_force * roll_pass.contact_length * roll_pass.lever_arm_coefficient
+@RollPass.Roll.hookimpl
+def roll_torque(roll_pass: RollPass, roll: RollPass.Roll):
+    return roll_pass.roll_force * roll.contact_length * roll_pass.lever_arm_coefficient

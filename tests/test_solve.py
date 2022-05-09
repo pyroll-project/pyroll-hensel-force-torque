@@ -1,8 +1,8 @@
 from pathlib import Path
 
 from pyroll import solve
-from pyroll.ui.exporter import Exporter
-from pyroll.ui.report import Report
+from pyroll import Exporter
+from pyroll import Reporter
 
 
 def test_solve(tmp_path: Path):
@@ -14,7 +14,7 @@ def test_solve(tmp_path: Path):
     solve(sequence, input_py.in_profile)
     print()
 
-    rendered = Report().render(sequence)
+    rendered = Reporter().render(sequence)
     report_file = tmp_path / "report.html"
     report_file.write_text(rendered)
     print(report_file)
