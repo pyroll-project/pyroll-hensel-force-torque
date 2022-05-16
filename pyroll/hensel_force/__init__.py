@@ -1,6 +1,5 @@
-from pyroll import RollPass
-from pyroll import Exporter
-from pyroll import Reporter
+from pyroll.core import RollPass
+from pyroll.ui import Exporter, Reporter
 
 from . import specs
 from . import impls

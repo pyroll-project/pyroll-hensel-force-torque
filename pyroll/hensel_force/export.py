@@ -1,11 +1,11 @@
-from pyroll import RollPass
-from pyroll import Reporter
-from pyroll import for_units
+from pyroll.core import RollPass
+from pyroll.ui import Exporter
+from pyroll.utils import for_units
 
 
-@Reporter.hookimpl
+@Exporter.hookimpl
 @for_units(RollPass)
-def unit_properties(unit: RollPass):
+def columns(unit: RollPass):
     return dict(
         roll_gap_ratio=f"{unit.roll_gap_ratio:.2f}",
         deformation_resistance=f"{unit.deformation_resistance:.4g}",

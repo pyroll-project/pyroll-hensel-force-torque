@@ -4,7 +4,13 @@ version = "1.0.0"
 description = "PyRoll plugin providing roll force and roll torque empirical approach by A. Hensel."
 authors = [
 ]
-license = ""
+license = "BSD-3-Clause"
+homepage = "https://pyroll-project.github.io/"
+repository = "https://github.com/pyroll-project/pyroll-hensel-force"
+documentation = "https://github.com/pyroll-project/pyroll-hensel-force/blob/main/docs/docs.pdf"
+packages = [
+    { include = "hensel-force", from="pyroll" }
+]
 
 [tool.poetry.dependencies]
 python = ">= 3.9, <3.11"
@@ -12,7 +18,7 @@ pyroll = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.0"
-pyroll = { path = "pyroll-core", develop = true }
+pyroll = { git = "https://github.com/pyroll-project/pyroll-core", branch = "main", develop = true }
 pytask = "^0.1.9"
 
 [build-system]

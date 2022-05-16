@@ -1,13 +1,12 @@
 from pathlib import Path
 
-from pyroll import solve
-from pyroll import Exporter
-from pyroll import Reporter
+from pyroll.core import solve
+from pyroll.ui import Exporter, Reporter
 
 
 def test_solve(tmp_path: Path):
     import pyroll.ui.cli.res.input_trio as input_py
-    import pyroll_hensel_force
+    import pyroll.hensel_force
 
     sequence = input_py.sequence
 
