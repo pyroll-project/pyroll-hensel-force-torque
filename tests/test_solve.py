@@ -6,7 +6,7 @@ from pyroll.ui import Exporter, Reporter
 
 def test_solve(tmp_path: Path):
     import pyroll.ui.cli.res.input_trio as input_py
-    import pyroll.hensel_force
+    import pyroll.hensel_power_and_labour
 
     sequence = input_py.sequence
 
