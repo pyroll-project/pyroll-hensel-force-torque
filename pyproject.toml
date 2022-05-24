@@ -6,10 +6,10 @@ authors = [
 ]
 license = "BSD-3-Clause"
 homepage = "https://pyroll-project.github.io/"
-repository = "https://github.com/pyroll-project/pyroll-hensel-force"
-documentation = "https://github.com/pyroll-project/pyroll-hensel-force/blob/main/docs/docs.pdf"
+repository = "https://github.com/pyroll-project/pyroll-hensel-power-and-labour"
+documentation = "https://github.com/pyroll-project/pyroll-hensel-power-and-labour/blob/main/docs/docs.pdf"
 packages = [
-    { include = "pyroll/hensel_force" }
+    { include = "pyroll/hensel_power_and_labour" }
 ]
 
 [tool.poetry.dependencies]
