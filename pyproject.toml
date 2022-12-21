@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyroll-hensel-power-and-labour"
-version = "1.0.0"
+version = "2.0.0a"
 description = "PyRoll plugin providing roll force and roll torque empirical approach by A. Hensel."
 authors = [
 ]
@@ -21,11 +21,10 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">= 3.9, <3.11"
-pyroll = "^1.0.0"
+pyroll-core = "^2.0.0a"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.0"
-pyroll = { git = "https://github.com/pyroll-project/pyroll-core", branch = "main", develop = true }
 pytask = "^0.2.0"
 
 [build-system]
