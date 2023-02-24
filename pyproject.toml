@@ -1,32 +1,42 @@
-[tool.poetry]
+[project]
 name = "pyroll-hensel-power-and-labour"
-version = "2.0.0a"
 description = "PyRoll plugin providing roll force and roll torque empirical approach by A. Hensel."
 authors = [
+    { name = "Christoph Renzing", email = "christoph.renzing@imf.tu-freiberg.de" },
+    { name = "Max Weiner", email = "max.weiner@imf.tu-freiberg.de" }
 ]
 license = "BSD-3-Clause"
-homepage = "https://pyroll-project.github.io/"
-repository = "https://github.com/pyroll-project/pyroll-hensel-power-and-labour"
-documentation = "https://github.com/pyroll-project/pyroll-hensel-power-and-labour/blob/main/docs/docs.pdf"
-packages = [
-    { include = "pyroll/hensel_power_and_labour" }
+requires-python = ">=3.9, <4.0"
+dependencies = [
+    "pyroll-core ~= 2.0",
 ]
 readme = "README.md"
 classifiers = [
     "Intended Audience :: Science/Research",
     "Intended Audience :: Manufacturing",
     "Operating System :: OS Independent",
-    "Topic :: Scientific/Engineering"
+    "Topic :: Scientific/Engineering",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Hatch",
+    "Framework :: IPython",
+    "Framework :: Jupyter",
+    "Framework :: Pytest",
+    "Framework :: Sphinx",
+    "Natural Language :: English",
 ]
 
-[tool.poetry.dependencies]
-python = ">= 3.9, <3.11"
-pyroll-core = "^2.0.0a"
+dynamic = ["version"]
 
-[tool.poetry.dev-dependencies]
-pytest = "^7.0.0"
-pytask = "^0.2.0"
+[project.urls]
+Homepage = "https://pyroll.readthedocs.io"
+Repository = "https://github.com/pyroll-project/pyroll-hensel-power-and-labour"
+Documentation = "https://github.com/pyroll-project/pyroll-hensel-power-and-labour/blob/main/docs/docs.pdf"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

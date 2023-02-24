@@ -1,6 +1,8 @@
 import numpy as np
 from pyroll.core import RollPass, Hook
 
+VERSION = "2.0.0"
+
 RollPass.roll_gap_ratio = Hook[float]()
 """Calculate cross-section ratio used in Hensel-Poluchin master curves."""
 
@@ -49,4 +51,4 @@ def roll_force(self: RollPass):
 
 @RollPass.Roll.roll_torque
 def roll_torque(self: RollPass.Roll):
-    return self.roll_pass().roll_force * self.contact_length * self.roll_pass().lever_arm_coefficient
+    return self.roll_pass.roll_force * self.contact_length * self.roll_pass.lever_arm_coefficient
