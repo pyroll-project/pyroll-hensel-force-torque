@@ -1,7 +1,7 @@
 ---
 title: PyRoll Hensel Roll Force and Torque Plugin  
 author: [Max Weiner, Christoph Renzing]
-date: 2022-04-04
+date: 2023-02-24
 ---
 
 This plugin provides the empirical roll force and roll torque models developed by A. Hensel and coworkers[^1][^2]. The
@@ -67,7 +67,7 @@ The plugin provides implementations of the following core hooks:
 :   The roll force occurring in this pass calculated by the models described above. Uses
 the `RollPass.deformation_resistance` and `RollPass.contact_area` hooks.
 
-`RollPass.roll_torque`
+`RollPass.Roll.roll_torque`
 :   The roll torque occurring in this pass calculated by the models described above. Uses the `RollPass.roll_force`,
 `RollPass.contact_length` and `RollPass.lever_arm_coefficient` hooks.
 

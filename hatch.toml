@@ -16,10 +16,14 @@ dependencies = [
 [envs.docs]
 path = ""
 dependencies = [
-    "pygments ~= 2.0"
+    "pygments ~= 2.0",
+    "pytask",
+    "pandas",
+    "matplotlib"
 ]
 
 [envs.docs.scripts]
+tasks = "python -m pytask"
 build = "pandoc -o docs/docs.pdf docs/docs.md"
 
 [envs.test]

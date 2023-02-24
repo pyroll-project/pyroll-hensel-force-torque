@@ -40,3 +40,5 @@ Documentation = "https://github.com/pyroll-project/pyroll-hensel-power-and-labou
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[pytask.ini_options]
