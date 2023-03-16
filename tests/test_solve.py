@@ -1,4 +1,5 @@
 import logging
+import webbrowser
 from pathlib import Path
 
 from pyroll.core import Profile, PassSequence, RollPass, Roll, CircularOvalGroove, Transport, RoundGroove
@@ -55,3 +56,17 @@ def test_solve(tmp_path: Path, caplog):
     finally:
         print("\nLog:")
         print(caplog.text)
+
+    try:
+        from pyroll.report import report
+
+        report = report(sequence)
+        f = tmp_path / "report.html"
+        f.write_text(report)
+        webbrowser.open(f.as_uri())
+
+    except ImportError:
+        pass
+
+    assert sequence[0].has_cached("deformation_resistance")
+    assert sequence[0].has_cached("lever_arm_coefficient")
