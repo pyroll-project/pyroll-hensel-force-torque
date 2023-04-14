@@ -1,16 +1,13 @@
 import numpy as np
 from pyroll.core import RollPass, Hook
 
-VERSION = "2.0.0"
+VERSION = "2.0.1"
 
 RollPass.roll_gap_ratio = Hook[float]()
 """Calculate cross-section ratio used in Hensel-Poluchin master curves."""
 
 RollPass.rolling_efficiency = Hook[float]()
 """Calculate rolling efficiency according to Hensel-Poluchin master curve."""
-
-RollPass.deformation_resistance = Hook[float]()
-"""Calculate deformation resistance according to Hensel-Poluchin master curve."""
 
 RollPass.lever_arm_coefficient = Hook[float]()
 """Calculate lever coefficient according to Hensel-Poluchin master curve."""
