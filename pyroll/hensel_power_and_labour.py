@@ -27,6 +27,12 @@ def rolling_efficiency(self: RollPass):
     return inverse_efficiency ** -1
 
 
+@RollPass.DiskElement.deformation_resistance
+def deformation_resistance(self: RollPass.DiskElement):
+    mean_flow_stress = (self.in_profile.flow_stress + self.out_profile.flow_stress) / 2
+    return mean_flow_stress / self.roll_pass.rolling_efficiency
+
+
 @RollPass.deformation_resistance
 def deformation_resistance(self: RollPass):
     mean_flow_stress = (self.in_profile.flow_stress + 2 * self.out_profile.flow_stress) / 3
