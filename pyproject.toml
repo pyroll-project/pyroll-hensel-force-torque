@@ -1,5 +1,5 @@
 [project]
-name = "pyroll-hensel-power-and-labour"
+name = "pyroll-hensel-force-torque"
 description = "PyRoll plugin providing roll force and roll torque empirical approach by A. Hensel."
 authors = [
     { name = "Christoph Renzing", email = "christoph.renzing@imf.tu-freiberg.de" },
@@ -34,8 +34,8 @@ dynamic = ["version"]
 
 [project.urls]
 Homepage = "https://pyroll.readthedocs.io"
-Repository = "https://github.com/pyroll-project/pyroll-hensel-power-and-labour"
-Documentation = "https://github.com/pyroll-project/pyroll-hensel-power-and-labour/blob/main/docs/docs.pdf"
+Repository = "https://github.com/pyroll-project/pyroll-hensel-force-torque"
+Documentation = "https://github.com/pyroll-project/pyroll-hensel-force-torque/blob/main/docs/docs.pdf"
 
 [build-system]
 requires = ["hatchling"]

@@ -4,7 +4,7 @@ packages = [
 ]
 
 [version]
-path = "pyroll/hensel_power_and_labour.py"
+path = "pyroll/hensel_force_torque.py"
 
 [envs.default]
 path = ".venv"
