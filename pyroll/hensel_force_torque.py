@@ -1,7 +1,7 @@
 import numpy as np
 from pyroll.core import BaseRollPass, Hook
 
-VERSION = "2.0.2"
+VERSION = "3.0.0"
 
 BaseRollPass.roll_gap_ratio = Hook[float]()
 """Calculate cross-section ratio used in Hensel-Poluchin master curves."""
