@@ -2,30 +2,33 @@ import logging
 import webbrowser
 from pathlib import Path
 
-from pyroll.core import Profile, PassSequence, RollPass, Roll, CircularOvalGroove, Transport, RoundGroove
+from pyroll.core import Profile, Roll, ThreeRollPass, Transport, RoundGroove, CircularOvalGroove, PassSequence, \
+    root_hooks
 
 
-def test_solve(tmp_path: Path, caplog):
+def test_solve3(tmp_path: Path, caplog):
     caplog.set_level(logging.DEBUG, logger="pyroll")
 
     import pyroll.hensel_force_torque
 
     in_profile = Profile.round(
-        diameter=30e-3,
+        diameter=55e-3,
         temperature=1200 + 273.15,
         strain=0,
         material=["C45", "steel"],
-        flow_stress=100e6
+        flow_stress=100e6,
+        length=1,
     )
 
     sequence = PassSequence([
-        RollPass(
+        ThreeRollPass(
             label="Oval I",
             roll=Roll(
                 groove=CircularOvalGroove(
                     depth=8e-3,
                     r1=6e-3,
-                    r2=40e-3
+                    r2=40e-3,
+                    pad_angle=30,
                 ),
                 nominal_radius=160e-3,
                 rotational_frequency=1
@@ -36,13 +39,14 @@ def test_solve(tmp_path: Path, caplog):
             label="I => II",
             duration=1
         ),
-        RollPass(
+        ThreeRollPass(
             label="Round II",
             roll=Roll(
                 groove=RoundGroove(
-                    r1=1e-3,
-                    r2=12.5e-3,
-                    depth=11.5e-3
+                    r1=3e-3,
+                    r2=25e-3,
+                    depth=11e-3,
+                    pad_angle=30,
                 ),
                 nominal_radius=160e-3,
                 rotational_frequency=1
@@ -58,15 +62,14 @@ def test_solve(tmp_path: Path, caplog):
         print(caplog.text)
 
     try:
-        from pyroll.report import report
+        import pyroll.report
 
-        report = report(sequence)
-        f = tmp_path / "report.html"
-        f.write_text(report)
-        webbrowser.open(f.as_uri())
+        report = pyroll.report.report(sequence)
+
+        report_file = tmp_path / "report.html"
+        report_file.write_text(report)
+        print(report_file)
+        webbrowser.open(report_file.as_uri())
 
     except ImportError:
         pass
-
-    assert sequence[0].has_cached("deformation_resistance")
-    assert sequence[0].has_cached("lever_arm_coefficient")

@@ -8,7 +8,7 @@ from pyroll.core import Profile, PassSequence, RollPass, Roll, CircularOvalGroov
 def test_solve_de(tmp_path: Path, caplog):
     caplog.set_level(logging.DEBUG, logger="pyroll")
 
-    import pyroll.hensel_power_and_labour
+    import pyroll.hensel_force_torque
 
     in_profile = Profile.round(
         diameter=30e-3,
