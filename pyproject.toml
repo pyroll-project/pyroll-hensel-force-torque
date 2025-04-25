@@ -1,6 +1,6 @@
 [project]
 name = "pyroll-hensel-force-torque"
-description = "PyRoll plugin providing roll force and roll torque empirical approach by A. Hensel."
+description = "PyRolL plugin providing roll force and roll torque empirical approach by A. Hensel."
 authors = [
     { name = "Christoph Renzing", email = "christoph.renzing@imf.tu-freiberg.de" },
     { name = "Max Weiner", email = "max.weiner@imf.tu-freiberg.de" }
